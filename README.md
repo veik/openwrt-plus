@@ -1,18 +1,47 @@
-# NanoPi R4S/R5S/R5C & X86_64 OpenWrt 简易构建脚本存档
+# OpenWrt Plus 23.05
 
-### 存档来自：https://init2.cooluc.com
+### NanoPi R4S/R5S/R5C & X86_64 固件下载:
+
+https://github.com/pmkol/openwrt-plus/releases
+
+```
+【首次登陆】
+地址：10.0.0.1（默认）
+用户：root
+密码：空
+
+【分区挂载】
+系统/磁盘管理 将系统盘剩余空间创建新分区
+系统/挂载点   启用新分区并挂载至/opt目录
+```
 
 ---------------
 
-## 基于 Linux 6.6 LTS 固件下载:
+#### 固件编译脚本存档来自：https://init2.cooluc.com
 
-#### NanoPi R4S: https://r4s.cooluc.com
+- 优化系统内核
+  - [x] Full cone NAT
+  - [x] TCP BBRv3
+  - [x] TCP Brutal
+  - [x] LLVM-BPF
+  - [x] Shortcut-FE
+- 使用 OpenWrt+ImmortalWrt 软件源，支持更多插件的在线安装与升级
+- 最小化集成常用插件，修复多处上游插件BUG
 
-#### NanoPi R5S/R5C: https://r5s.cooluc.com
+| ⚓ 服务 | 🗳️ Docker  | 🩺 网络  |
+|  :----  |  :----  |  :----  |
+| PassWall | Dockerman | 网速测试 |
+| Mihomo | Docker | SQM队列管理 |
+| MosDNS | Dockerd | UPnP |
+| 硬盘休眠 | Docker-compose | 带宽监控 |
+| Watchcat | | Socat |
+| Aira2 | | 访问控制 |
+| FRP客户端 | | IP限速 |
+| 网络共享 | | |
+| 网络唤醒 | | |
+| ZeroTier | | |
 
-#### X86_64: https://x86.cooluc.com
-
-#### 构建来源: https://github.com/sbwml/builder
+自定义预装插件建议fork上游原项目，以免因本项目未及时同步导致编译失败
 
 ---------------
 
@@ -225,9 +254,9 @@ bash <(curl -sS https://raw.githubusercontent.com/你的用户名/r4s_build_scri
 
 ### 二、构建固件
 - 在存储库名称下，单击（<img src="https://camo.githubusercontent.com/392391d290482f9c4881912eec0700ec2acef8e0d5d2e24b3f8b23d9354fa73e/68747470733a2f2f66696c652e636f6f6c75632e636f6d2f323232322e737667" alt="Actions"> Actions）。
-  
+
 - 在左侧边栏中，单击要运行的工作流的名称：**Build releases**。
-  
+
 - 在工作流运行的列表上方，单击“**Run workflow**”按钮，选择要构建的设备固件并运行工作流。
-  
+
   ![image](https://github.com/sbwml/r4s_build_script/assets/16485166/136abcd1-ecf3-4e6d-aa1a-5393a75a25cc)
